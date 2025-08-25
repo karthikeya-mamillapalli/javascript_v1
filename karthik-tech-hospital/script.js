@@ -13,11 +13,24 @@ bmiForm.addEventListener("submit", function (e) {
   console.log("Write your logic here");
   //Write your logic here.
   //Logic begins
-
+  let heightInMeters = height / 100;
+  let bmi = Number((weight / heightInMeters ** 2).toFixed(2));
+  console.log(bmi);
+  let result;
+  if (bmi < 18.5) {
+    console.log("thin");
+    result = "thin";
+  } else if (bmi > 25) {
+    console.log("Fat");
+      result = "Fat";
+  } else {
+    console.log("normal");
+      result = "normal";
+  }
   //Logic ends
 
   //Uncomment below code after writing your logic
-  // form.querySelector("#result").textContent = `${name}, You are ${result}`;
+  form.querySelector("#result").textContent = `${name.toUpperCase()}, You are ${result}`;
 });
 
 //Below code is reset the form - will explain later
